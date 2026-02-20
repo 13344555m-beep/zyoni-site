@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Zyoni Cyber</title>
+<title>Zyoni Secure Access</title>
 
 <style>
 body{
@@ -15,19 +15,24 @@ body{
 
 h1{
     margin-top:120px;
-    font-size:40px;
+    font-size:35px;
     text-shadow:0 0 20px #00ffcc;
 }
 
-p{
-    font-size:18px;
-    opacity:0.8;
+input{
+    margin-top:30px;
+    padding:10px;
+    font-size:16px;
+    background:black;
+    border:2px solid #00ffcc;
+    color:#00ffcc;
+    text-align:center;
 }
 
 button{
-    margin-top:40px;
-    padding:15px 40px;
-    font-size:18px;
+    margin-top:20px;
+    padding:10px 30px;
+    font-size:16px;
     background:transparent;
     color:#00ffcc;
     border:2px solid #00ffcc;
@@ -38,22 +43,31 @@ button:hover{
     background:#00ffcc;
     color:black;
 }
-</style>
 
+#error{
+    margin-top:20px;
+    color:red;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Welcome To Zyoni System 👑🔥</h1>
-<p>Cyber Security | Developer</p>
+<h1>🔐 Zyoni Secure System</h1>
 
-<button onclick="goMatrix()">Enter The Matrix</button>
+<p>Enter Access Code</p>
+
+<input type="password" id="pass" placeholder="Access Code">
+<br>
+<button onclick="checkPass()">Enter</button>
+
+<p id="error"></p>
 
 <script>
-function goMatrix(){
-    window.location.href = "matrix.html";
-}
-</script>
+function checkPass(){
+    var password = document.getElementById("pass").value;
 
-</body>
-</html>
+    if(password === "Zioni666"){
+        window.location.href = "matrix.html";
+    }else{
+        document.getElementById("error").innerHTML = "❌
